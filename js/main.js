@@ -15,6 +15,8 @@ var app = new Vue({
         searchInput: '',
         // Array of movies
         movies: [],
+        //Vote
+        vote: 0,
     }, // end Data
     methods:{
         /**
@@ -29,7 +31,12 @@ var app = new Vue({
                 }
             })
                 .then(response => {
+                    // Return movies
                     this.movies = response.data.results; 
+                    // Return vote for a number upward to its nearest integer:
+                    response.data.results.forEach((vote) => {  
+                        return this.vote = Math.ceil(vote.vote_average);
+                    })
                 })
                 .catch(function (error) {
                     // handle error
@@ -38,5 +45,6 @@ var app = new Vue({
             // Clear Searchbar
             this.searchInput= '';  
         }
+        
     }
 })
