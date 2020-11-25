@@ -23,7 +23,7 @@ var app = new Vue({
          * Get result from searchbar
          */
         getResult(){
-            // Get Movie Database
+            // Call database
             this.getMovie();
             this.getSeries();
            
@@ -55,7 +55,6 @@ var app = new Vue({
         /**
          * Get Tv-Series
         */
-
         getSeries(){
             axios.get('https://api.themoviedb.org/3/search/tv', {
                 params: {
