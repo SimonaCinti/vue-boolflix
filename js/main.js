@@ -15,13 +15,27 @@ var app = new Vue({
         searchInput: '',
         // Array of movies
         movies: [],
+        // Arrays of Tv Series
+        series: [],
     }, // end Data
     methods:{
         /**
          * Get result from searchbar
          */
         getResult(){
-            axios.get('https://api.themoviedb.org/3/search/movie',{
+            // Get Movie Database
+            this.getMovie();
+            this.getSeries();
+           
+            // Clear Searchbar
+            this.searchInput= '';  
+        },
+
+        /** 
+         * Get Movie 
+         */
+        getMovie(){
+            axios.get('https://api.themoviedb.org/3/search/movie', {
                 params: {
                     api_key: '8ee3ad03988875233a1bddc1e4e8ff76',
                     query: this.searchInput,
@@ -30,14 +44,34 @@ var app = new Vue({
             })
                 .then(response => {
                     // Return movies
-                    this.movies = response.data.results; 
+                    this.movies = response.data.results;
                 })
                 .catch(function (error) {
                     // handle error
                     console.log(error);
                 });
-            // Clear Searchbar
-            this.searchInput= '';  
+        },
+
+        /**
+         * Get Tv-Series
+        */
+
+        getSeries(){
+            axios.get('https://api.themoviedb.org/3/search/tv', {
+                params: {
+                    api_key: '8ee3ad03988875233a1bddc1e4e8ff76',
+                    query: this.searchInput,
+                    language: 'it-IT'
+                }
+            })
+                .then(response => {
+                    // Return movies
+                    this.series = response.data.results;
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                });
         },
         /**
          * Get Vote

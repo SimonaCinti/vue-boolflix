@@ -20,7 +20,9 @@
         </div> 
         <!-- List Movies -->
         <div class="movies-wrapper">
-            <ul class="movie-list">
+            <ul v-if="movies.length > 0" class="movie-list">
+                <!-- List movies -->
+                <h2>Movies:</h2>
                 <li v-for="movie in movies">
                     <p>Titolo del film:</p>
                     {{movie.title}}
@@ -38,6 +40,29 @@
                     <!-- {{movie.vote_average}} -->
                     <i v-for="star in getVote(movie.vote_average)" class="fas fa-star"></i>
                     <i v-for="emptyStar in (5 - getVote(movie.vote_average))" class="far fa-star"></i>
+                </li>
+            </ul>
+            <!-- Series -->
+            <ul v-if="series.length > 0" class="series-list">
+                <!-- List movies -->
+                <h2>Tv-Series:</h2>
+                <li v-for="serie in series">
+                    <p>Titolo del Telefilm:</p>
+                    {{serie.name}}
+                    <p>Titolo originale:</p>
+                    {{serie.original_name}}
+                    <p>Lingua</p>
+                    <span v-if="serie.original_language ==='it'">
+                        <img class="it-flag" src="./img/it.png" alt="">
+                    </span>
+                    <span v-else-if="serie.original_language ==='en'">
+                        <img class="en-flag" src="./img/en.png" alt="">
+                    </span>
+                    <span v-else>{{serie.original_language}}</span>
+                    <p>Voto</p>
+                    <!-- {{serie.vote_average}} -->
+                    <i v-for="star in getVote(serie.vote_average)" class="fas fa-star"></i>
+                    <i v-for="emptyStar in (5 - getVote(serie.vote_average))" class="far fa-star"></i>
                 </li>
             </ul>
         </div>
