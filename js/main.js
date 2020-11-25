@@ -65,7 +65,7 @@ var app = new Vue({
                 }
             })
                 .then(response => {
-                    // Return movies
+                    // Return series
                     this.series = response.data.results;
                 })
                 .catch(function (error) {
