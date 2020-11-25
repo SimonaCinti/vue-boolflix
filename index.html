@@ -13,7 +13,8 @@
     <div id="app">
         <!-- Search Bar -->
        <div class="search">
-            <span>Search:</span><input v-model='searchInput' type="text">
+            <span>Search:</span>
+            <input @keyup.enter="getResult"v-model='searchInput' type="text">
             <button @click="getResult">Find</button>
         </div> 
         <!-- List Movies -->

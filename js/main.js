@@ -21,13 +21,11 @@ var app = new Vue({
             axios.get('https://api.themoviedb.org/3/search/movie',{
                 params: {
                     api_key: '8ee3ad03988875233a1bddc1e4e8ff76',
-                    query: 'ritorno al futuro'
+                    query: this.searchInput
                 }
             })
                 .then(response => {
-                    // handle success
-                    console.log(response.data.results);
-                    return this.movies = response.data.results
+                    this.movies = response.data.results; 
                 })
                 .catch(function (error) {
                     // handle error
