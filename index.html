@@ -20,7 +20,16 @@
         <!-- List Movies -->
         <div class="movies-wrapper">
             <ul class="movie-list">
-                <li v-for="movie in movies">{{movie.title}}</li>
+                <li v-for="movie in movies">
+                    <p>Titolo del film:</p>
+                    {{movie.title}}
+                    <p>Titolo originale:</p>
+                    {{movie.original_title}}
+                    <p>Lingua</p>
+                    {{movie.original_language}}
+                    <p>Voto</p>
+                    {{movie.vote_average}}
+                </li>
             </ul>
         </div>
     </div>

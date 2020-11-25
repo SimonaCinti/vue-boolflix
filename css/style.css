@@ -19,3 +19,16 @@ input {
 button {
     padding: 0 10px;
 }
+ul {
+    margin-top: 50px;
+    list-style: none;
+}
+li {
+    margin:10px 0;
+    padding: 10px;
+    background-color: #bfbdbd;
+}
+li p {
+    margin: 10px 0;
+    font-weight: bold;
+}
