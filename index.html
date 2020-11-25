@@ -30,7 +30,7 @@
                     {{movie.original_language}}
                     <p>Voto</p>
                     {{movie.vote_average}}
-                    <i class="far fa-star"></i>
+                    <i v-for="n in getVote(vote)"class="far fa-star"></i>
                     <i class="fas fa-star"></i>
                 </li>
             </ul>

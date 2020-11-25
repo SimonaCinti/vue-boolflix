@@ -48,6 +48,14 @@ var app = new Vue({
                 });
             // Clear Searchbar
             this.searchInput= '';  
+        },
+        /**
+         * Get Vote
+         */
+        getVote(){
+            for (i = 0; i > this.votes.length; i++){
+                return this.votes.vote / 2
+            }
         }
         
     }
