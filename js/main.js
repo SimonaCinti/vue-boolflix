@@ -5,8 +5,8 @@
 **           */
 
 
-//TODO: Milestone 1: 
-//TODO: - searchbar - print a schermo dei film con i seguenti valori: 1) Titolo 2) Titolo Originale 3) Lingua 4) Voto 
+//TODO: Milestone 2: 1- trasforma il voto da 1 a 10 in un intero da 1 a 5 arrotondando per eccesso. 
+//TODO: 2- trasforma la stringa statica della lingua in una delle due bandiere png e gestendo il caso in cui non c'è la bandiera della nazione ritornata
 
 var app = new Vue({
     el: '#app',
@@ -17,11 +17,15 @@ var app = new Vue({
         movies: [],
     }, // end Data
     methods:{
+        /**
+         * Get result from searchbar
+         */
         getResult(){
             axios.get('https://api.themoviedb.org/3/search/movie',{
                 params: {
                     api_key: '8ee3ad03988875233a1bddc1e4e8ff76',
-                    query: this.searchInput
+                    query: this.searchInput,
+                    language: 'it-IT'
                 }
             })
                 .then(response => {
@@ -30,7 +34,9 @@ var app = new Vue({
                 .catch(function (error) {
                     // handle error
                     console.log(error);
-                })
+                });
+            // Clear Searchbar
+            this.searchInput= '';  
         }
     }
 })
