@@ -10,6 +10,20 @@
     <title>BoolFlix</title>
 </head>
 <body>
+    <div id="app">
+        <!-- Search Bar -->
+       <div class="search">
+            <span>Search:</span><input v-model='searchInput' type="text">
+            <button>Find</button>
+        </div> 
+        <!-- List Movies -->
+        <div class="movies-wrapper">
+            <ul class="movie-list">
+
+            </ul>
+        </div>
+    </div>
+    
     
     <!-- Axios js -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js'></script>

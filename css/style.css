@@ -7,6 +7,15 @@ box-sizing: border-box;
 body {
     font-family: sans-serif;
     cursor: default;
-    color: white;
-    background-color: #656565;
+}
+
+/* Basic Debug  CSS*/
+#app{
+    margin: 40px;
+}
+input { 
+    margin-left: 10px;
+}
+button {
+    padding: 0 10px;
 }
