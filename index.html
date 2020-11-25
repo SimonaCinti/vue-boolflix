@@ -14,12 +14,12 @@
         <!-- Search Bar -->
        <div class="search">
             <span>Search:</span><input v-model='searchInput' type="text">
-            <button>Find</button>
+            <button @click="getResult">Find</button>
         </div> 
         <!-- List Movies -->
         <div class="movies-wrapper">
             <ul class="movie-list">
-
+                <li v-for="movie in movies">{{movie.title}}</li>
             </ul>
         </div>
     </div>
