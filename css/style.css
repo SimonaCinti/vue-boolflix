@@ -10,6 +10,7 @@ body {
 }
 
 /* Basic Debug CSS FMI*/
+
 #app{
     margin: 40px;
 }
@@ -32,3 +33,9 @@ li p {
     margin: 10px 0;
     font-weight: bold;
 }
+
+.it-flag,
+.en-flag {
+    max-width: 50px;
+}
+

@@ -27,11 +27,17 @@
                     <p>Titolo originale:</p>
                     {{movie.original_title}}
                     <p>Lingua</p>
-                    {{movie.original_language}}
+                    <span v-if="movie.original_language ==='it'">
+                        <img class="it-flag"src="./img/it.png" alt="">
+                    </span>
+                    <span v-else-if="movie.original_language ==='en'">
+                        <img class="en-flag"src="./img/en.png" alt="">
+                    </span>
+                    <span v-else>{{movie.original_language}}</span>
                     <p>Voto</p>
-                    {{movie.vote_average}}
-                    <i v-for="n in getVote(vote)"class="far fa-star"></i>
-                    <i class="fas fa-star"></i>
+                    <!-- {{movie.vote_average}} -->
+                    <i v-for="star in getVote(movie.vote_average)" class="fas fa-star"></i>
+                    <i v-for="emptyStar in (5 - getVote(movie.vote_average))" class="far fa-star"></i>
                 </li>
             </ul>
         </div>

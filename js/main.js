@@ -15,10 +15,6 @@ var app = new Vue({
         searchInput: '',
         // Array of movies
         movies: [],
-        //Vote
-        vote: 0,
-        // Array of Votes
-        votes: [],
     }, // end Data
     methods:{
         /**
@@ -35,12 +31,6 @@ var app = new Vue({
                 .then(response => {
                     // Return movies
                     this.movies = response.data.results; 
-                    // Return vote for a number upward to its nearest integer:
-                    response.data.results.forEach( 
-                        (vote) =>{                        
-                        this.vote = Math.ceil(vote.vote_average);
-                        this.votes.push(this.vote)}
-                    )
                 })
                 .catch(function (error) {
                     // handle error
@@ -52,10 +42,8 @@ var app = new Vue({
         /**
          * Get Vote
          */
-        getVote(){
-            for (i = 0; i > this.votes.length; i++){
-                return this.votes.vote / 2
-            }
+        getVote(value) {
+            return Math.ceil(value / 2)
         }
         
     }
