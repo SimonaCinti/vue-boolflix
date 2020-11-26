@@ -138,8 +138,8 @@ h2 {
 }
 
 .result-wrapper li img {
-    max-width: 154px;
-    height: 180px;
+    /* max-width: 154px; */
+    height: 280px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
