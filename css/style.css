@@ -35,9 +35,7 @@ li p {
     font-weight: bold;
 }
 
-.flag,
-.it-flag,
-.en-flag {
+.flag {
     max-width: 50px;
 }
 

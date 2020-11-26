@@ -5,8 +5,7 @@
 **           */
 
 
-//TODO: Milestone 2: 1- trasforma il voto da 1 a 10 in un intero da 1 a 5 arrotondando per eccesso. 
-//TODO: 2- trasforma la stringa statica della lingua in una delle due bandiere png e gestendo il caso in cui non c'è la bandiera della nazione ritornata
+//TODO: Milestone 3: aggiungere la copertina del film o della serie agli elenchi
 
 var app = new Vue({
     el: '#app',
@@ -91,6 +90,12 @@ var app = new Vue({
          */
         getFlag(lang){
             return `./img/${lang}.png`
-        }
+        },
+        /**
+         * Get poster image
+         */
+        getPoster(poster){
+            return `https://image.tmdb.org/t/p/w342/${poster}`
+        },
     }
 })
