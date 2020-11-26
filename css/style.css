@@ -20,14 +20,13 @@ body {
 /* Typography */
 h2 {
     font-size: 32px;
-    margin-left: 5px;
 }
 
 /* Search Bar*/
 
 .search-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background: #2b3a47;
     height: 80px;
@@ -35,6 +34,7 @@ h2 {
 }
 
 .logo {
+    flex-basis: 50%;
     height: 100%;
     padding-top: 10px;
 }    
@@ -98,7 +98,7 @@ h2 {
 }
 
 .result-wrapper li {
-    flex-basis: 200px;
+    flex-basis: calc(100% / 5 - 10px);
     margin:10px 10px 10px 0px;
     padding: 15px;
     background: #2b3a47;
