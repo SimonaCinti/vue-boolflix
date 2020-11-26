@@ -27,7 +27,7 @@ h2 {
 
 .search-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background: #2b3a47;
     height: 80px;
@@ -82,7 +82,8 @@ h2 {
 
 .result-wrapper {
     padding: 10px;
-    overflow-y: hidden;
+    width: 1100px;
+    margin: auto;
 }
 
 .result-wrapper h2 {
@@ -97,7 +98,7 @@ h2 {
 }
 
 .result-wrapper li {
-    flex-basis: 300px;
+    flex-basis: 200px;
     margin:10px 10px 10px 0px;
     padding: 15px;
     background: #2b3a47;
