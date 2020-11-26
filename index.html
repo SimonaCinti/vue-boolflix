@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Sansita+Swashed&display=swap"
+        rel="stylesheet">
+    <!-- Fontawesome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'/>
     <!-- Vue -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js'></script>
@@ -13,10 +18,15 @@
 <body>
     <div id="app">
         <!-- Search Bar -->
-       <div class="search">
-            <span>Search:</span>
-            <input @keyup.enter="getResult"v-model='searchInput' type="text">
-            <button @click="getResult">Find</button>
+       <div class="search-nav">
+           <div class="logo">
+               <img src="./img/logo.png" alt="boolflix">
+           </div>
+           <div class="search">
+             <span>Search:</span>
+                <input @keyup.enter="getResult"v-model='searchInput' type="text" placeholder="Search Movie or Tv Show...">
+             <button @click="getResult">Find</button>  
+           </div>  
         </div> 
         <!-- List Movies -->
         <div class="movies-wrapper">

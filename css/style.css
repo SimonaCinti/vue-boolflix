@@ -5,22 +5,70 @@ box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     cursor: default;
+    color: white;
+    background: #192d3c; /*debug*/
 }
+
+/* App container */
+#app{
+    background: #192d3c;
+}
+
+/* Search Bar*/
+
+.search-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2b3a47;
+    height: 80px;
+}
+
+.logo {
+    height: 100%;
+    padding: 10px 20px 0;
+}    
+
+
+.logo img {
+    height: 100%;
+}
+
+.search {
+    padding: 10px 20px;
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.search input { 
+    margin-left: 10px;
+    width: 200px;
+    padding-left: 10px;
+
+}
+.search button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Sansita Swashed', cursive;
+    background:#0cd977;
+    border:1px solid #000000;
+    color:#000000;
+    text-align: center;
+    transition: all 0.15s;
+}
+
+.search button:hover {
+    color:#FFFFFF;
+    border-color:#FFFFFF;
+}
+
 
 /* Basic Debug CSS FMI*/
 
-#app{
-    margin: 40px;
-}
 
-input { 
-    margin-left: 10px;
-}
-button {
-    padding: 0 10px;
-}
+
 ul {
     margin-top: 50px;
     list-style: none;
