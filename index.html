@@ -24,7 +24,10 @@
                 <!-- List movies -->
                 <h2>Movies:</h2>
                 <li v-for="movie in movies">
-                    <img :src="getPoster(movie.poster_path)" alt="">
+                    <img v-if="checkPoster(movie.poster_path)":src="getPoster(movie.poster_path)" alt="">
+                    <img v-else src="./img/poster-placeholder.png"
+                    class="noposter" 
+                    alt="no poster available">
                     <p>Titolo del film:</p>
                     {{movie.title}}
                     <p>Titolo originale:</p>
@@ -45,6 +48,11 @@
                 <!-- List movies -->
                 <h2>Tv-Series:</h2>
                 <li v-for="serie in series">
+                    <img v-if="checkPoster(serie.poster_path)" :src="getPoster(serie.poster_path)" alt="">
+                    <img v-else 
+                    src="./img/poster-placeholder.png" 
+                    class="noposter"
+                    alt="no poster available">
                     <p>Titolo del Telefilm:</p>
                     {{serie.name}}
                     <p>Titolo originale:</p>
