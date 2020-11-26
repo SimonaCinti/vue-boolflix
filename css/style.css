@@ -26,11 +26,15 @@ h2 {
 
 .search-nav {
     display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
     justify-content: space-around;
     align-items: center;
     background: #2b3a47;
     height: 80px;
     padding: 10px;
+    z-index: 2;
 }
 
 .logo {
@@ -84,6 +88,7 @@ h2 {
     padding: 10px;
     width: 1100px;
     margin: auto;
+    margin-top: 30px;
 }
 
 .result-wrapper h2 {
@@ -93,7 +98,7 @@ h2 {
 .result-wrapper ul{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: 80px;
     list-style: none;
 }
 
@@ -106,7 +111,7 @@ h2 {
 }
 
 .result-wrapper li .plot {
-    font-size: 15px;
+    font-size: 16px;
     height: 100%;
     position: absolute;
     top: 0px;
@@ -114,11 +119,12 @@ h2 {
     opacity: 0;
     background-color: hsla(0, 0%, 6%, 0.789);
     z-index: 1;
+    overflow-y: auto;
 }
 
 .result-wrapper li .plot p {
-    padding: 0 5px 0 5px;
-    text-align: justify;
+    padding: 10px;
+    text-align: center;
 }
 
 .result-wrapper li .plot:hover {
