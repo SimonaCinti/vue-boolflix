@@ -38,6 +38,9 @@
                     <img v-else src="./img/poster-placeholder.png"
                     class="noposter" 
                     alt="no poster available">
+                    <div v-show="movie.overview !== ''" class="plot">
+                        <p>{{movie.overview}}</p>
+                    </div>
                     <p>{{movie.title}}</p>
                     <p>{{movie.original_title}}</p>
                     <!-- {{movie.vote_average}} -->
