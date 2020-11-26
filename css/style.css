@@ -12,8 +12,14 @@ body {
 }
 
 /* App container */
+
 #app{
     background: #192d3c;
+}
+
+/* Typography */
+h2 {
+    font-size: 32px;
 }
 
 /* Search Bar*/
@@ -24,11 +30,12 @@ body {
     align-items: center;
     background: #2b3a47;
     height: 80px;
+    padding: 10px;
 }
 
 .logo {
     height: 100%;
-    padding: 10px 20px 0;
+    padding-top: 10px;
 }    
 
 
@@ -37,15 +44,18 @@ body {
 }
 
 .search {
-    padding: 10px 20px;
     font-family: 'Sansita Swashed', cursive;
 }
 
 .search input { 
     margin-left: 10px;
     width: 200px;
-    padding-left: 10px;
-
+    padding: 5px 10px;
+    border: 2px solid white;
+    outline: none;
+}
+.search input:focus{
+    border: 2px solid #0cd977;
 }
 .search button {
     margin-left: 10px;
@@ -53,9 +63,10 @@ body {
     border-radius: 5px;
     font-family: 'Sansita Swashed', cursive;
     background:#0cd977;
-    border:1px solid #000000;
+    border:1px solid #0cd977;
     color:#000000;
     text-align: center;
+    text-transform: none;
     transition: all 0.15s;
 }
 
@@ -64,6 +75,21 @@ body {
     border-color:#FFFFFF;
 }
 
+
+/* List Movies */
+
+.movies-wrapper {
+    padding: 10px;
+}
+
+.movies-wrapper ul{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.movies-wrapper h2 {
+    flex-basis: 100%;
+}
 
 /* Basic Debug CSS FMI*/
 
@@ -76,7 +102,7 @@ ul {
 li {
     margin:10px 0;
     padding: 10px;
-    background-color: #bfbdbd;
+    background: #2b3a47;
 }
 li p {
     margin: 10px 0;

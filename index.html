@@ -24,7 +24,7 @@
            </div>
            <div class="search">
              <span>Search:</span>
-                <input @keyup.enter="getResult"v-model='searchInput' type="text" placeholder="Search Movie or Tv Show...">
+                <input @keyup.enter="getResult"v-model='searchInput' type="text" placeholder="Movie or Tv Show...">
              <button @click="getResult">Find</button>  
            </div>  
         </div> 
@@ -32,7 +32,7 @@
         <div class="movies-wrapper">
             <ul v-if="movies.length > 0" class="movie-list">
                 <!-- List movies -->
-                <h2>Movies:</h2>
+                <h2>Movies</h2>
                 <li v-for="movie in movies">
                     <img v-if="checkPoster(movie.poster_path)":src="getPoster(movie.poster_path)" alt="">
                     <img v-else src="./img/poster-placeholder.png"
@@ -53,10 +53,12 @@
                     <i v-for="emptyStar in (5 - getVote(movie.vote_average))" class="far fa-star"></i>
                 </li>
             </ul>
+        </div>
+        <div class="movies-wrapper">
             <!-- Series -->
             <ul v-if="series.length > 0" class="series-list">
                 <!-- List movies -->
-                <h2>Tv-Series:</h2>
+                <h2>Tv-Series</h2>
                 <li v-for="serie in series">
                     <img v-if="checkPoster(serie.poster_path)" :src="getPoster(serie.poster_path)" alt="">
                     <img v-else 
