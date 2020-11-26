@@ -52,6 +52,7 @@ h2 {
     width: 200px;
     padding: 5px 10px;
     border: 2px solid white;
+    border-radius: 3px;
     outline: none;
 }
 .search input:focus{
@@ -76,37 +77,37 @@ h2 {
 }
 
 
-/* List Movies */
+/* Result Wrapper */
 
-.movies-wrapper {
+.result-wrapper {
     padding: 10px;
 }
 
-.movies-wrapper ul{
-    display: flex;
-    flex-wrap: wrap;
-
-}
-.movies-wrapper h2 {
+.result-wrapper h2 {
     flex-basis: 100%;
 }
 
-/* Basic Debug CSS FMI*/
-
-
-
-ul {
+.result-wrapper ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 50px;
     list-style: none;
 }
-li {
-    margin:10px 0;
-    padding: 10px;
+
+.result-wrapper li {
+    margin:10px 10px 10px 0px;
+    padding: 15px;
     background: #2b3a47;
+    border: 2px solid red;
 }
-li p {
+.result-wrapper li p {
     margin: 10px 0;
     font-weight: bold;
+}
+
+.result-wrapper li .star-vote {
+    display: flex;
 }
 
 .flag {
@@ -116,4 +117,6 @@ li p {
 .noposter {
     max-width: 154px;
 }
+
+
 

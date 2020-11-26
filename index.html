@@ -29,10 +29,10 @@
            </div>  
         </div> 
         <!-- List Movies -->
-        <div class="movies-wrapper">
+        <div class="result-wrapper">
             <ul v-if="movies.length > 0" class="movie-list">
                 <!-- List movies -->
-                <h2>Movies</h2>
+                <h2>Movies Result</h2>
                 <li v-for="movie in movies">
                     <img v-if="checkPoster(movie.poster_path)":src="getPoster(movie.poster_path)" alt="">
                     <img v-else src="./img/poster-placeholder.png"
@@ -49,16 +49,18 @@
                     <span v-else>{{movie.original_language}}</span>
                     <p>Voto</p>
                     <!-- {{movie.vote_average}} -->
-                    <i v-for="star in getVote(movie.vote_average)" class="fas fa-star"></i>
-                    <i v-for="emptyStar in (5 - getVote(movie.vote_average))" class="far fa-star"></i>
+                    <div class="star-vote">
+                        <i v-for="star in getVote(movie.vote_average)" class="fas fa-star"></i>
+                        <i v-for="emptyStar in (5 - getVote(movie.vote_average))" class="far fa-star"></i> 
+                    </div>  
                 </li>
             </ul>
         </div>
-        <div class="movies-wrapper">
+        <div class="result-wrapper">
             <!-- Series -->
             <ul v-if="series.length > 0" class="series-list">
                 <!-- List movies -->
-                <h2>Tv-Series</h2>
+                <h2>Tv-Series Result</h2>
                 <li v-for="serie in series">
                     <img v-if="checkPoster(serie.poster_path)" :src="getPoster(serie.poster_path)" alt="">
                     <img v-else 
