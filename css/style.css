@@ -96,10 +96,11 @@ h2 {
 }
 
 .result-wrapper li {
+    flex-basis: 300px;
     margin:10px 10px 10px 0px;
     padding: 15px;
     background: #2b3a47;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .result-wrapper li p {
     margin: 10px;
