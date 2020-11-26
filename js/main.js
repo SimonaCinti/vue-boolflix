@@ -17,6 +17,8 @@ var app = new Vue({
         movies: [],
         // Arrays of Tv Series
         series: [],
+        // available Flags
+        availableFlags: ['it','en'],
     }, // end Data
     methods:{
         /**
@@ -77,7 +79,18 @@ var app = new Vue({
          */
         getVote(value) {
             return Math.ceil(value / 2)
+        },
+        /**
+         * Check lang
+         */
+        isLangFlag(lang){
+            return this.availableFlags.includes(lang)
+        },
+        /**
+         * Get flag img
+         */
+        getFlag(lang){
+            return `./img/${lang}.png`
         }
-        
     }
 })

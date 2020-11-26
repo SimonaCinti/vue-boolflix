@@ -29,12 +29,9 @@
                     <p>Titolo originale:</p>
                     {{movie.original_title}}
                     <p>Lingua</p>
-                    <span v-if="movie.original_language ==='it'">
-                        <img class="it-flag"src="./img/it.png" alt="">
-                    </span>
-                    <span v-else-if="movie.original_language ==='en'">
-                        <img class="en-flag"src="./img/en.png" alt="">
-                    </span>
+                    <img v-if="isLangFlag(movie.original_language)"
+                    :src="getFlag(movie.original_language)" alt="movie.original_language"
+                    class="flag">
                     <span v-else>{{movie.original_language}}</span>
                     <p>Voto</p>
                     <!-- {{movie.vote_average}} -->
@@ -52,12 +49,8 @@
                     <p>Titolo originale:</p>
                     {{serie.original_name}}
                     <p>Lingua</p>
-                    <span v-if="serie.original_language ==='it'">
-                        <img class="it-flag" src="./img/it.png" alt="">
-                    </span>
-                    <span v-else-if="serie.original_language ==='en'">
-                        <img class="en-flag" src="./img/en.png" alt="">
-                    </span>
+                    <img v-if="isLangFlag(serie.original_language)" :src="getFlag(serie.original_language)" alt="serie.original_language"
+                        class="flag">
                     <span v-else>{{serie.original_language}}</span>
                     <p>Voto</p>
                     <!-- {{serie.vote_average}} -->
