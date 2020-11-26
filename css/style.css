@@ -82,6 +82,7 @@ h2 {
 
 .result-wrapper {
     padding: 10px;
+    overflow-y: hidden;
 }
 
 .result-wrapper h2 {
@@ -103,33 +104,36 @@ h2 {
     /* border: 2px solid red; */
 }
 .result-wrapper li p {
-    margin: 10px;
+    margin: 10px 0 15px;
     text-align: center;
+}
+
+.result-wrapper li img {
+    max-width: 154px;
+    height: 180px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 
 .result-wrapper li .star-vote {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin: 25px 0;
 }
 
-.result-wrapper li img {
+.result-wrapper li .flag {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 50px;
+    height: 30px;
 }
 
 .result-wrapper li .language{
     text-align: center;
     text-transform: uppercase;
-}
-
-.flag {
-    max-width: 50px;
-}
-
-.noposter {
-    max-width: 154px;
 }
 
 

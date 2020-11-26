@@ -48,8 +48,7 @@
                     <img v-if="isLangFlag(movie.original_language)"
                     :src="getFlag(movie.original_language)" alt="movie.original_language"
                     class="flag">
-                    <p class="language"v-else>{{movie.original_language}}</p>
-                     
+                    <p class="language"v-else>{{movie.original_language}}</p>   
                 </li>
             </ul>
         </div>
@@ -64,18 +63,17 @@
                     src="./img/poster-placeholder.png" 
                     class="noposter"
                     alt="no poster available">
-                    <p>Titolo del Telefilm:</p>
-                    {{serie.name}}
-                    <p>Titolo originale:</p>
-                    {{serie.original_name}}
-                    <p>Lingua</p>
+                    <p>{{serie.name}}</p>
+                    <p>{{serie.original_name}}</p>
+                    <!-- {{serie.vote_average}} -->
+                    <div class="star-vote">
+                        <i v-for="star in getVote(serie.vote_average)" class="fas fa-star"></i>
+                        <i v-for="emptyStar in (5 - getVote(serie.vote_average))" class="far fa-star"></i>
+                    </div>
                     <img v-if="isLangFlag(serie.original_language)" :src="getFlag(serie.original_language)" alt="serie.original_language"
                         class="flag">
-                    <span v-else>{{serie.original_language}}</span>
-                    <p>Voto</p>
-                    <!-- {{serie.vote_average}} -->
-                    <i v-for="star in getVote(serie.vote_average)" class="fas fa-star"></i>
-                    <i v-for="emptyStar in (5 - getVote(serie.vote_average))" class="far fa-star"></i>
+                    <p class="language" v-else>{{serie.original_language}}</p>
+                    
                 </li>
             </ul>
         </div>
