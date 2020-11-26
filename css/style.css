@@ -20,6 +20,7 @@ body {
 /* Typography */
 h2 {
     font-size: 32px;
+    margin-left: 5px;
 }
 
 /* Search Bar*/
@@ -90,7 +91,6 @@ h2 {
 .result-wrapper ul{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin-top: 50px;
     list-style: none;
 }
@@ -102,12 +102,25 @@ h2 {
     border: 2px solid red;
 }
 .result-wrapper li p {
-    margin: 10px 0;
-    font-weight: bold;
+    margin: 10px;
+    text-align: center;
 }
 
 .result-wrapper li .star-vote {
     display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.result-wrapper li img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.result-wrapper li .language{
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .flag {

@@ -38,21 +38,18 @@
                     <img v-else src="./img/poster-placeholder.png"
                     class="noposter" 
                     alt="no poster available">
-                    <p>Titolo del film:</p>
-                    {{movie.title}}
-                    <p>Titolo originale:</p>
-                    {{movie.original_title}}
-                    <p>Lingua</p>
-                    <img v-if="isLangFlag(movie.original_language)"
-                    :src="getFlag(movie.original_language)" alt="movie.original_language"
-                    class="flag">
-                    <span v-else>{{movie.original_language}}</span>
-                    <p>Voto</p>
+                    <p>{{movie.title}}</p>
+                    <p>{{movie.original_title}}</p>
                     <!-- {{movie.vote_average}} -->
                     <div class="star-vote">
                         <i v-for="star in getVote(movie.vote_average)" class="fas fa-star"></i>
                         <i v-for="emptyStar in (5 - getVote(movie.vote_average))" class="far fa-star"></i> 
-                    </div>  
+                    </div> 
+                    <img v-if="isLangFlag(movie.original_language)"
+                    :src="getFlag(movie.original_language)" alt="movie.original_language"
+                    class="flag">
+                    <p class="language"v-else>{{movie.original_language}}</p>
+                     
                 </li>
             </ul>
         </div>
