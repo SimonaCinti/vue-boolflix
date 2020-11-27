@@ -38,7 +38,8 @@
                        <span>Select genre</span>
                         <select v-model="selectedGenre"> 
                             <option value="all">all</option>
-                            <option value="all2">all2</option>
+                            <option v-for="genre in movieGenre"value="genre">{{genre}}</option>
+                            
                         </select> 
                     </div>
                     

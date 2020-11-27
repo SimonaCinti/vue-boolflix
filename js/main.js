@@ -50,6 +50,12 @@ var app = new Vue({
                 .then(response => {
                     // Return movies
                     this.movies = response.data.results;
+                    //Copy genre available
+                    this.movies.forEach((movie)=>{
+                        if (!this.movieGenre.includes(movie.genre_ids)){
+                            this.movieGenre.push(movie.genre_ids);
+                        }
+                    })
                 })
                 .catch(function (error) {
                     // handle error
