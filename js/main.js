@@ -15,6 +15,7 @@ var app = new Vue({
         // Array of movies
         movies: [],
         filMovie: [],
+        allMovies: [],
         // Arrays of Tv Series
         series: [],
         // available Flags
@@ -57,6 +58,7 @@ var app = new Vue({
                 .then(response => {
                     // Return movies
                     this.movies = response.data.results;
+                    this.allMovies = response.data.results
                     //Copy genre available for search
                     this.movies.forEach((movie)=>{
                         if (!this.movieGenre.includes(movie.genre_ids)){
@@ -165,7 +167,7 @@ var app = new Vue({
                          return movie
                     }
                     )
-                }
+                } else {this.filMovie = this.allMovies} 
                 return this.movies = this.filMovie;
             
         }
