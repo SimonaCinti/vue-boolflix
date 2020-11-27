@@ -37,8 +37,8 @@
                     <div class="filter-genre">
                        <span>Select genre</span>
                         <select v-model="selectedGenre"> 
-                            <option value="all">all</option>
-                            <option v-for="genre in movieGenre"value="genre">{{genre}}</option>
+                            <option value="all">All</option>
+                            <option v-for="genre in allGenres"value="genre.name">{{genre.name}}</option>
                             
                         </select> 
                     </div>
