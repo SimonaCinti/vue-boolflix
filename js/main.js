@@ -22,8 +22,6 @@ var app = new Vue({
         availableFlags: ['it','en'],
         // selected Genre
         selectedGenre: 'all',
-        // available genre
-        movieGenre: [],
         // all genres for movies
         allGenMovies: [],
         // all genres for tv series
@@ -59,12 +57,6 @@ var app = new Vue({
                     // Return movies
                     this.movies = response.data.results;
                     this.allMovies = response.data.results
-                    //Copy genre available for search
-                    this.movies.forEach((movie)=>{
-                        if (!this.movieGenre.includes(movie.genre_ids)){
-                            this.movieGenre.push(movie.genre_ids);
-                        }
-                    })
                 })
                 .catch(function (error) {
                     // handle error
