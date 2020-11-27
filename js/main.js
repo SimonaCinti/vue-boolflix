@@ -19,7 +19,9 @@ var app = new Vue({
         // available Flags
         availableFlags: ['it','en'],
         // selected Genre
-        selectedGenre: 'all'
+        selectedGenre: 'all',
+        // available genre
+        movieGenre: [],
     }, // end Data
     methods:{
         /**
