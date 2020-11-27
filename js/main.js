@@ -15,13 +15,16 @@ var app = new Vue({
         // Array of movies
         movies: [],
         filMovie: [],
-        allMovies: [],
+        copyMovies: [],
         // Arrays of Tv Series
         series: [],
+        filSerie: [],
+        copySeries: [],
         // available Flags
         availableFlags: ['it','en'],
         // selected Genre
-        selectedGenre: 'all',
+        selectedGenreM: 'all',
+        selectedGenreS: 'all',
         // all genres for movies
         allGenMovies: [],
         // all genres for tv series
@@ -56,7 +59,7 @@ var app = new Vue({
                 .then(response => {
                     // Return movies
                     this.movies = response.data.results;
-                    this.allMovies = response.data.results
+                    this.copyMovies = response.data.results
                 })
                 .catch(function (error) {
                     // handle error
@@ -148,18 +151,18 @@ var app = new Vue({
                 });
         },
         /**
-         * Select genre filter
+         * Select genre filter for movies
          */
-        filter(){
-                if (this.selectedGenre !== 'all')
+        filterMovies(){
+                if (this.selectedGenreM !== 'all')
                 {                   
                 this.filMovie = this.movies.filter(
                     (movie) => {
-                         if (movie.genre_ids.includes(this.selectedGenre))
+                         if (movie.genre_ids.includes(this.selectedGenreM))
                          return movie
                     }
                     )
-                } else {this.filMovie = this.allMovies} 
+                } else {this.filMovie = this.copyMovies} 
                 return this.movies = this.filMovie;
             
         }
