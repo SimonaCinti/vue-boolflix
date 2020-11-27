@@ -91,18 +91,12 @@ var app = new Vue({
         getFlag(lang){
             return `./img/${lang}.png`
         },
-        /** 
-         *  Check Poster
-        */
-        checkPoster(poster){
-            if (poster !== '')
-            return poster
-        },
+
         /**
          * Get poster image
          */
         getPoster(poster){
-            return `https://image.tmdb.org/t/p/w154/${poster}`
+            return `https://image.tmdb.org/t/p/w342/${poster}`
         },
     }
 })

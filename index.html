@@ -18,7 +18,7 @@
 <body>
     <div id="app">
         <!-- Search Bar -->
-       <div class="search-nav">
+       <header class="search-nav">
            <div class="logo">
                <img src="./img/logo.png" alt="boolflix">
            </div>
@@ -27,59 +27,56 @@
                 <input @keyup.enter="getResult"v-model='searchInput' type="text" placeholder="Movie or Tv Show...">
              <button @click="getResult">Find</button>  
            </div>  
-        </div> 
+        </header> 
         <!-- List Movies -->
-        <div class="result-wrapper">
-            <ul v-if="movies.length > 0" class="movie-list">
-                <!-- List movies -->
-                <h2>Movies Result</h2>
-                <li v-for="movie in movies">
-                    <img v-if="checkPoster(movie.poster_path)":src="getPoster(movie.poster_path)" alt="">
-                    <img v-else src="./img/poster-placeholder.png"
-                    class="noposter" 
-                    alt="no poster available">
-                    <div v-show="movie.overview !== ''" class="plot">
-                        <p>{{movie.overview}}</p>
-                    </div>
-                    <p>{{movie.title}}</p>
-                    <p>{{movie.original_title}}</p>
-                    <!-- {{movie.vote_average}} -->
-                    <div class="star-vote">
-                        <i v-for="star in getVote(movie.vote_average)" class="fas fa-star"></i>
-                        <i v-for="emptyStar in (5 - getVote(movie.vote_average))" class="far fa-star"></i> 
-                    </div> 
-                    <img v-if="isLangFlag(movie.original_language)"
-                    :src="getFlag(movie.original_language)" alt="movie.original_language"
-                    class="flag">
-                    <p class="language"v-else>{{movie.original_language}}</p>   
-                </li>
-            </ul>
-        </div>
-        <div class="result-wrapper">
-            <!-- Series -->
-            <ul v-if="series.length > 0" class="series-list">
-                <!-- List movies -->
-                <h2>Tv-Series Result</h2>
-                <li v-for="serie in series">
-                    <img v-if="checkPoster(serie.poster_path)" :src="getPoster(serie.poster_path)" alt="">
-                    <img v-else 
-                    src="./img/poster-placeholder.png" 
-                    class="noposter"
-                    alt="no poster available">
-                    <p>{{serie.name}}</p>
-                    <p>{{serie.original_name}}</p>
-                    <!-- {{serie.vote_average}} -->
-                    <div class="star-vote">
-                        <i v-for="star in getVote(serie.vote_average)" class="fas fa-star"></i>
-                        <i v-for="emptyStar in (5 - getVote(serie.vote_average))" class="far fa-star"></i>
-                    </div>
-                    <img v-if="isLangFlag(serie.original_language)" :src="getFlag(serie.original_language)" alt="serie.original_language"
-                        class="flag">
-                    <p class="language" v-else>{{serie.original_language}}</p>
-                    
-                </li>
-            </ul>
-        </div>
+        <main>
+            <div class="result-wrapper">
+                <ul v-if="movies.length > 0" class="movie-list">
+                    <!-- List movies -->
+                    <h2>Movies Result</h2>
+                    <li v-for="movie in movies">
+                        <img v-if="movie.poster_path" :src="getPoster(movie.poster_path)" alt="">
+                        <img v-else src="./img/poster-placeholder.png" class="noposter" alt="no poster available">
+                        <div v-show="movie.overview !== ''" class="plot">
+                            <p>{{movie.overview}}</p>
+                        </div>
+                        <p>{{movie.title}}</p>
+                        <p>{{movie.original_title}}</p>
+                        <!-- {{movie.vote_average}} -->
+                        <div class="star-vote">
+                            <i v-for="star in getVote(movie.vote_average)" class="fas fa-star"></i>
+                            <i v-for="emptyStar in (5 - getVote(movie.vote_average))" class="far fa-star"></i>
+                        </div>
+                        <img v-if="isLangFlag(movie.original_language)" :src="getFlag(movie.original_language)"
+                            alt="movie.original_language" class="flag">
+                        <p class="language" v-else>{{movie.original_language}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-wrapper">
+                <!-- Series -->
+                <ul v-if="series.length > 0" class="series-list">
+                    <!-- List movies -->
+                    <h2>Tv-Series Result</h2>
+                    <li v-for="serie in series">
+                        <img v-if="serie.poster_path" :src="getPoster(serie.poster_path)" alt="">
+                        <img v-else src="./img/poster-placeholder.png" class="noposter" alt="no poster available">
+                        <p>{{serie.name}}</p>
+                        <p>{{serie.original_name}}</p>
+                        <!-- {{serie.vote_average}} -->
+                        <div class="star-vote">
+                            <i v-for="star in getVote(serie.vote_average)" class="fas fa-star"></i>
+                            <i v-for="emptyStar in (5 - getVote(serie.vote_average))" class="far fa-star"></i>
+                        </div>
+                        <img v-if="isLangFlag(serie.original_language)" :src="getFlag(serie.original_language)"
+                            alt="serie.original_language" class="flag">
+                        <p class="language" v-else>{{serie.original_language}}</p>
+            
+                    </li>
+                </ul>
+            </div>
+        </main>
+        
     </div>
     
     

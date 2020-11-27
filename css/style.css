@@ -8,14 +8,17 @@ body {
     font-family: 'Noto Sans', sans-serif;
     cursor: default;
     color: white;
-    background: #192d3c; /*debug*/
+    background: #192d3c; 
 }
 
 /* App container */
 
 #app{
     background: #192d3c;
+    height: 100vh;
+    overflow: hidden;  
 }
+
 
 /* Typography */
 h2 {
@@ -31,7 +34,7 @@ h2 {
     top: 0;
     justify-content: space-around;
     align-items: center;
-    background: #2b3a47;
+    background-color: rgba(121, 32, 32, 0.149);
     height: 80px;
     padding: 10px;
     z-index: 2;
@@ -84,11 +87,16 @@ h2 {
 
 /* Result Wrapper */
 
+main {
+    overflow-y: scroll;
+    margin-top: 80px;
+    height: 100%;
+}
+
 .result-wrapper {
     padding: 10px;
     width: 1100px;
     margin: auto;
-    margin-top: 30px;
 }
 
 .result-wrapper h2 {
