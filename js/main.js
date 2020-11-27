@@ -157,12 +157,13 @@ var app = new Vue({
          */
         filter(){
                 if (this.selectedGenre !== 'all')
-                {
-                    let movies = this.movies
-                    movies.filter(
-                    movie => movie.genre_ids.includes(this.selectedGenre)
+                {                   
+                 this.movies.filter(
+                    (movie) => {
+                         if (movie.genre_ids.includes(this.selectedGenre))
+                         return movie
+                    }
                     )
-                    return movies = this.movies;
                 }
             
         }
