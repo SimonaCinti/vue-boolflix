@@ -65,8 +65,15 @@
             <div class="result-wrapper">
                 <!-- Series -->
                 <ul v-if="series.length > 0" class="series-list">
-                    <!-- List movies -->
+                    <!-- List Series -->
                     <h2>Tv-Series Result</h2>
+                    <div class="filter-genre">
+                        <span>Select genre</span>
+                        <select v-model="selectedGenre">
+                            <option value="all">All</option>
+                            <option v-for="genre in allGenSeries" value="genre.name">{{genre.name}}</option>
+                        </select>
+                    </div>
                     <li v-for="serie in series">
                         <img v-if="serie.poster_path" :src="getPoster(serie.poster_path)" alt="">
                         <img v-else src="./img/poster-placeholder.png" class="noposter" alt="no poster available">

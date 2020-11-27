@@ -36,6 +36,7 @@ var app = new Vue({
             this.getMovie();
             this.getSeries();
             this.getGenreMovie();
+            this.getGenreSerie();
            
             // Clear Searchbar
             this.searchInput= '';  
