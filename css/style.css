@@ -83,7 +83,7 @@ h2 {
 /* Result Wrapper */
 
 main {
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-top: 80px;
     height: 100%;
 }
