@@ -14,11 +14,9 @@ body {
 /* App container */
 
 #app{
-    background: #192d3c;
     height: 100vh;
     overflow: hidden;  
 }
-
 
 /* Typography */
 h2 {
@@ -30,14 +28,11 @@ h2 {
 .search-nav {
     display: flex;
     width: 100%;
-    position: fixed;
-    top: 0;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(121, 32, 32, 0.149);
     height: 80px;
     padding: 10px;
-    z-index: 2;
 }
 
 .logo {
