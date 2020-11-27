@@ -14,6 +14,7 @@ var app = new Vue({
         searchInput: '',
         // Array of movies
         movies: [],
+        filMovie: [],
         // Arrays of Tv Series
         series: [],
         // available Flags
@@ -158,13 +159,14 @@ var app = new Vue({
         filter(){
                 if (this.selectedGenre !== 'all')
                 {                   
-                 this.movies.filter(
+                this.filMovie = this.movies.filter(
                     (movie) => {
                          if (movie.genre_ids.includes(this.selectedGenre))
                          return movie
                     }
                     )
                 }
+                return this.movies = this.filMovie;
             
         }
         
