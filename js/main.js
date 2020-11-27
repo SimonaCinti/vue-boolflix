@@ -56,9 +56,9 @@ var app = new Vue({
                 .then(response => {
                     // Return movies
                     this.movies = response.data.results;
-                    //Copy genre available
+                    //Copy genre available for search
                     this.movies.forEach((movie)=>{
-                        if (!this.movieGenre.includes(movie.genre_ids) && (movie.genre_ids.length !== 0 )){
+                        if (!this.movieGenre.includes(movie.genre_ids)){
                             this.movieGenre.push(movie.genre_ids);
                         }
                     })
@@ -152,6 +152,20 @@ var app = new Vue({
                     console.log(error);
                 });
         },
+        /**
+         * Select genre filter
+         */
+        filter(){
+                if (this.selectedGenre !== 'all')
+                {
+                    let movies = this.movies
+                    movies.filter(
+                    movie => movie.genre_ids.includes(this.selectedGenre)
+                    )
+                    return movies = this.movies;
+                }
+            
+        }
         
-    }
+    } 
 })

@@ -36,10 +36,10 @@
                     <h2>Movies Result</h2>
                     <div class="filter-genre">
                        <span>Select genre</span>
-                        <select v-model="selectedGenre"> 
+                        <select v-model="selectedGenre"
+                        @change="filter()"> 
                             <option value="all">All</option>
-                            <option v-for="genre in allGenMovies"value="genre.name">{{genre.name}}</option>
-                            
+                            <option v-for="genre in allGenMovies":value="genre.id">{{genre.name}}</option>  
                         </select> 
                     </div>
                     
