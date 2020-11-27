@@ -18,6 +18,8 @@ var app = new Vue({
         series: [],
         // available Flags
         availableFlags: ['it','en'],
+        // selected Genre
+        selectedGenre: 'all'
     }, // end Data
     methods:{
         /**

@@ -165,4 +165,14 @@ h2 {
 }
 
 
+/* Filter selection */
+.filter-genre {
+    flex-basis: 100%;
+    margin: 10px 0;
 
+}
+.filter-genre select {
+    margin-left: 10px;
+    width: 200px;
+    padding-left: 5px;
+}

@@ -34,6 +34,14 @@
                 <ul v-if="movies.length > 0" class="movie-list">
                     <!-- List movies -->
                     <h2>Movies Result</h2>
+                    <div class="filter-genre">
+                       <span>Select genre</span>
+                        <select v-model="selectedGenre"> 
+                            <option value="all">all</option>
+                            <option value="all2">all2</option>
+                        </select> 
+                    </div>
+                    
                     <li v-for="movie in movies">
                         <img v-if="movie.poster_path" :src="getPoster(movie.poster_path)" alt="">
                         <img v-else src="./img/poster-placeholder.png" class="noposter" alt="no poster available">
