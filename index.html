@@ -60,6 +60,7 @@
                             alt="movie.original_language" class="flag">
                         <p class="language" v-else>{{movie.original_language}}</p>
                     </li>
+                    <h3 v-show="resultMovies">Nessun risultato</h3>
                 </ul>
             </div>
             <div class="result-wrapper">
@@ -89,8 +90,8 @@
                         <img v-if="isLangFlag(serie.original_language)" :src="getFlag(serie.original_language)"
                             alt="serie.original_language" class="flag">
                         <p class="language" v-else>{{serie.original_language}}</p>
-            
                     </li>
+                    <h3 v-show="resultSeries">Nessun risultato</h3>
                 </ul>
             </div>
         </main>
