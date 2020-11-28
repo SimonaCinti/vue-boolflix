@@ -162,9 +162,11 @@ var app = new Vue({
          * Select genre filter for movies
          */
         filterMovies(){
+            // reset array for filter
+            this.movies = this.copyMovies
             // check genre
                 if (this.selectedGenreM !== 'all')
-                {                   
+                {                  
                 this.filMovie = this.movies.filter(
                     (movie) => {
                          if (movie.genre_ids.includes(this.selectedGenreM))
@@ -191,6 +193,8 @@ var app = new Vue({
          */
         
         filterSeries() {
+            // reset array for search
+            this.series = this.copySeries
             // check genre
             if (this.selectedGenreS !== 'all') {
                 this.filSerie = this.series.filter(
