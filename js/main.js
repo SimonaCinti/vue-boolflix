@@ -162,6 +162,7 @@ var app = new Vue({
          * Select genre filter for movies
          */
         filterMovies(){
+            // check genre
                 if (this.selectedGenreM !== 'all')
                 {                   
                 this.filMovie = this.movies.filter(
@@ -174,12 +175,14 @@ var app = new Vue({
                 else {
                     this.filMovie = this.copyMovies;
                 } 
+                // check if there are movies for the genre
                 if (this.filMovie.length === 0){
                     this.resultMovies = true;
                 }
                 else {
                     this.resultMovies = false;
                 }
+                //return result
                 return this.movies = this.filMovie;
             
         },
@@ -188,6 +191,7 @@ var app = new Vue({
          */
         
         filterSeries() {
+            // check genre
             if (this.selectedGenreS !== 'all') {
                 this.filSerie = this.series.filter(
                     (serie) => {
@@ -196,12 +200,14 @@ var app = new Vue({
                     }
                 )
             } else { this.filSerie = this.copySeries; }
+            // check if there are movies for the genre
             if (this.filSerie.length === 0) {
                 this.resultSeries = true;
             }
             else {
                 this.resultSeries = false;
             }
+            //return result
             return this.series = this.filSerie;
 
         },
