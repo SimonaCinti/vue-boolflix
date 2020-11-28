@@ -88,6 +88,7 @@ var app = new Vue({
                 .then(response => {
                     // Return series
                     this.series = response.data.results;
+                    this.copySeries = response.data.results;
                 })
                 .catch(function (error) {
                     // handle error
@@ -176,6 +177,9 @@ var app = new Vue({
                 if (this.filMovie.length === 0){
                     this.resultMovies = true;
                 }
+                else {
+                    this.resultMovies = false;
+                }
                 return this.movies = this.filMovie;
             
         },
@@ -191,9 +195,12 @@ var app = new Vue({
                             return serie
                     }
                 )
-            } else { this.filSerie = this.copySeries }
+            } else { this.filSerie = this.copySeries; }
             if (this.filSerie.length === 0) {
                 this.resultSeries = true;
+            }
+            else {
+                this.resultSeries = false;
             }
             return this.series = this.filSerie;
 
