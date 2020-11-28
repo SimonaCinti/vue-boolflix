@@ -165,7 +165,22 @@ var app = new Vue({
                 } else {this.filMovie = this.copyMovies} 
                 return this.movies = this.filMovie;
             
-        }
+        },
+        /**
+         * Select genre filter for Tv Series
+         */
         
+        filterSeries() {
+            if (this.selectedGenreS !== 'all') {
+                this.filSerie = this.series.filter(
+                    (serie) => {
+                        if (serie.genre_ids.includes(this.selectedGenreS))
+                            return serie
+                    }
+                )
+            } else { this.filSerie = this.copySeries }
+            return this.series = this.filSerie;
+
+        },
     } 
 })

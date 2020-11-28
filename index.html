@@ -69,7 +69,9 @@
                     <h2>Tv-Series Result</h2>
                     <div class="filter-genre">
                         <span>Select genre</span>
-                        <select v-model="selectedGenreS">
+                        <select 
+                        v-model="selectedGenreS"
+                        @change="filterSeries()">
                             <option value="all">All</option>
                             <option v-for="genre in allGenSeries" :value="genre.id">{{genre.name}}</option>
                         </select>
