@@ -14,11 +14,15 @@ var app = new Vue({
         searchInput: '',
         // Array of movies
         movies: [],
+        // Array of movies - filtered
         filMovie: [],
+        // Hard copy movies - searched
         copyMovies: [],
         // Arrays of Tv Series
         series: [],
+        // Array of series- filtered
         filSerie: [],
+        // Hard copy  series - searched
         copySeries: [],
         // available Flags
         availableFlags: ['it','en'],
@@ -29,6 +33,9 @@ var app = new Vue({
         allGenMovies: [],
         // all genres for tv series
         allGenSeries: [],
+        // empty result filter
+        resultMovies: false,
+        resultSeries: false,
     }, // end Data
     methods:{
         /**
@@ -162,7 +169,13 @@ var app = new Vue({
                          return movie
                     }
                     )
-                } else {this.filMovie = this.copyMovies} 
+                } 
+                else {
+                    this.filMovie = this.copyMovies;
+                } 
+                if (this.filMovie.length === 0){
+                    this.resultMovies = true;
+                }
                 return this.movies = this.filMovie;
             
         },
@@ -179,6 +192,9 @@ var app = new Vue({
                     }
                 )
             } else { this.filSerie = this.copySeries }
+            if (this.filSerie.length === 0) {
+                this.resultSeries = true;
+            }
             return this.series = this.filSerie;
 
         },

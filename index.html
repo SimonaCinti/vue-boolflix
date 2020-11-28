@@ -31,8 +31,8 @@
         <!-- List Movies -->
         <main>
             <div class="result-wrapper">
-                <ul v-if="movies.length > 0" class="movie-list">
-                    <!-- List movies -->
+                <ul v-if="(movies.length > 0) || resultMovies" class="movie-list">
+                    <!-- Title and search selection genre -->
                     <h2>Movies Result</h2>
                     <div class="filter-genre">
                        <span>Select genre</span>
@@ -42,7 +42,7 @@
                             <option v-for="genre in allGenMovies":value="genre.id">{{genre.name}}</option>  
                         </select> 
                     </div>
-                    
+                    <!-- Movie List -->
                     <li v-for="movie in movies">
                         <img v-if="movie.poster_path" :src="getPoster(movie.poster_path)" alt="">
                         <img v-else src="./img/poster-placeholder.png" class="noposter" alt="no poster available">
@@ -64,7 +64,7 @@
             </div>
             <div class="result-wrapper">
                 <!-- Series -->
-                <ul v-if="series.length > 0" class="series-list">
+                <ul v-if="series.length > 0 || resultSeries" class="series-list">
                     <!-- List Series -->
                     <h2>Tv-Series Result</h2>
                     <div class="filter-genre">
