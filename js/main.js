@@ -178,12 +178,7 @@ var app = new Vue({
                     this.filMovie = this.copyMovies;
                 } 
                 // check if there are movies for the genre
-                if (this.filMovie.length === 0){
-                    this.resultMovies = true;
-                }
-                else {
-                    this.resultMovies = false;
-                }
+                this.resultMovies = (this.filMovie.length ===0) ? true : false ;
                 //return result
                 return this.movies = this.filMovie;
             
@@ -205,15 +200,9 @@ var app = new Vue({
                 )
             } else { this.filSerie = this.copySeries; }
             // check if there are movies for the genre
-            if (this.filSerie.length === 0) {
-                this.resultSeries = true;
-            }
-            else {
-                this.resultSeries = false;
-            }
+            this.resultSeries = (this.filSerie.length === 0) ? true : false;
             //return result
             return this.series = this.filSerie;
-
         },
     } 
 })
