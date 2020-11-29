@@ -49,7 +49,9 @@
                         <div v-show="movie.overview !== ''" class="plot">
                             <p>{{movie.overview}}</p>
                         </div>
+                        <p class="title">Titolo:</p>
                         <p>{{movie.title}}</p>
+                        <p class="original-title">Titolo Originale:</p>
                         <p>{{movie.original_title}}</p>
                         <!-- {{movie.vote_average}} -->
                         <div class="star-vote">
@@ -80,7 +82,9 @@
                     <li v-for="serie in series">
                         <img v-if="serie.poster_path" :src="getPoster(serie.poster_path)" alt="">
                         <img v-else src="./img/poster-placeholder.png" class="noposter" alt="no poster available">
+                        <p class="title">Titolo:</p>
                         <p>{{serie.name}}</p>
+                        <p class="original-title">Titolo Originale:</p>
                         <p>{{serie.original_name}}</p>
                         <!-- {{serie.vote_average}} -->
                         <div class="star-vote">

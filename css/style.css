@@ -25,6 +25,12 @@ h2 {
     font-style: italic;
 }
 
+p.title, 
+p.original-title {
+    font-weight: bold;
+    color: grey;
+}
+
 /* Search Bar*/
 
 .search-nav {
