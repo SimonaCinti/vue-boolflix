@@ -14,14 +14,10 @@ var app = new Vue({
         searchInput: '',
         // Array of movies
         movies: [],
-        // Array of movies - filtered
-        filMovie: [],
         // Hard copy movies - searched
         copyMovies: [],
         // Arrays of Tv Series
         series: [],
-        // Array of series- filtered
-        filSerie: [],
         // Hard copy  series - searched
         copySeries: [],
         // available Flags
@@ -167,7 +163,7 @@ var app = new Vue({
             // check genre
                 if (this.selectedGenreM !== 'all')
                 {                  
-                this.filMovie = this.movies.filter(
+                this.movies = this.movies.filter(
                     (movie) => {
                          if (movie.genre_ids.includes(this.selectedGenreM))
                          return movie
@@ -175,12 +171,12 @@ var app = new Vue({
                     )
                 } 
                 else {
-                    this.filMovie = this.copyMovies;
+                    this.movies = this.copyMovies;
                 } 
                 // check if there are movies for the genre
-                this.resultMovies = (this.filMovie.length ===0) ? true : false ;
+                this.resultMovies = (this.movies.length ===0) ? true : false ;
                 //return result
-                return this.movies = this.filMovie;
+                return this.movies;
             
         },
         /**
@@ -192,17 +188,17 @@ var app = new Vue({
             this.series = this.copySeries
             // check genre
             if (this.selectedGenreS !== 'all') {
-                this.filSerie = this.series.filter(
+                this.series = this.series.filter(
                     (serie) => {
                         if (serie.genre_ids.includes(this.selectedGenreS))
                             return serie
                     }
                 )
-            } else { this.filSerie = this.copySeries; }
+            } else { this.series = this.copySeries; }
             // check if there are movies for the genre
-            this.resultSeries = (this.filSerie.length === 0) ? true : false;
+            this.resultSeries = (this.series.length === 0) ? true : false;
             //return result
-            return this.series = this.filSerie;
+            return this.series;
         },
     } 
 })
