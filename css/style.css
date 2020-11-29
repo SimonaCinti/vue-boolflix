@@ -19,7 +19,10 @@ body {
 
 /* Typography */
 h2 {
+    margin-top: 20px;
     font-size: 32px;
+    color: #0cd977;
+    font-style: italic;
 }
 
 /* Search Bar*/
@@ -97,8 +100,11 @@ h2 {
 .result-wrapper ul{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 80px;
     list-style: none;
+}
+
+.result-wrapper .movie-list {
+    margin-top: 80px;
 }
 
 .result-wrapper li {
